@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-css-modules",
+    "stylelint-config-clean-order",
+    "stylelint-prettier/recommended"
+  ],
+  "ignoreFiles": [
+    "out/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ],
+  "rules": {
+    "selector-id-pattern": null,
+    "selector-class-pattern": null,
+    "value-keyword-case": null,
+    "keyframes-name-pattern": null,
+    "alpha-value-notation": "percentage",
+    "color-function-notation": "legacy",
+    "declaration-property-value-no-unknown": [
+      true,
+      { "ignoreProperties": { "fill-opacity": "/\\d+%/" } }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.madeWith {
+  white-space: nowrap;
+}
+
+.name {
+  position: relative;
+}
+
+.name[data-caret='true']::after {
+  content: '_';
+  animation: blink ease 1s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+/* Heart */
+.heartSvg {
+  flex-shrink: 0;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5px;
+}
+
+.heart {
+  fill: transparent;
+  stroke: var(--theme-primary-bright);
+  stroke-dasharray: 233.1723px;
+  stroke-dashoffset: 233.1723px;
+}
+
+.visible > .heart {
+  fill: rgb(var(--theme-highlight-rgb), 25%);
+  stroke-width: 6px;
+
+  transition-delay: 0.25s, 0.5s;
+  transition-duration: 0.5s, 0.5s;
+  transition-property: stroke-dashoffset, fill;
+  transition-timing-function: cubic-bezier(0.51, 0.1, 0.13, 0.72);
+}
